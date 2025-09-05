@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Rules Text Editor Enhanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 Notes Editor</h1>
+            <p>Create formatted notes and save them as an HTML file.</p>
+        </div>
+        <div class="toolbar">
+            <button class="format-btn" id="boldBtn" title="Bold (Ctrl+B)"><b>B</b></button>
+            <button class="format-btn" id="italicBtn" title="Italic (Ctrl+I)"><i>I</i></button>
+            <button class="format-btn" id="strikeBtn" title="Strikethrough (Ctrl+Shift+S)"><s>S</s></button>
+            <span class="separator">|</span>
+            <button class="tool-btn rule-btn" id="ruleBtn" title="Create Rule Block">📚</button>
+            <button class="tool-btn dialogue-btn" id="dialogueBtn" title="Create Dialogue Block">💬</button>
+            <button class="tool-btn example-btn" id="exampleBtn" title="Create Example Block">💡</button>
+            <button class="tool-btn center-btn" id="centerBlockBtn" title="Create Centered Text Block">T</button>
+            <button class="tool-btn line-btn" id="lineBtn" title="Insert Separator Line">➖</button>
+            <span class="separator">|</span>
+            <button class="tool-btn header-block-btn" id="headerBlockBtn" title="Create Header Block (H1)">⭐</button>
+            <button class="tool-btn vocab-btn" id="addVocabWordBtn" title="Add Selected Word(s) to Vocabulary">📖</button>
+            <span class="separator">|</span>
+            <button class="tool-btn file-save-btn" id="saveFileBtn" title="Save all data to a JSON file">💾</button>
+            <button class="tool-btn file-load-btn" id="loadFileBtn" title="Load data from a JSON file">📂</button>
+            <button class="tool-btn preview-new-tab-btn" id="previewInNewTabBtn" title="Open current preview in a new tab">👁️</button>
+            <span class="separator">|</span>
+            <button class="tool-btn save-btn" id="saveHtmlBtn" title="Export current preview as an HTML file">📄</button>
+            <button class="clear-btn" id="clearBtn" title="Clear all blocks and vocabulary">Clear All</button>
+            <button class="tool-btn guide-btn" id="guideBtn" title="Show Guide for Using the Editor">❓</button> <!-- NEW BUTTON -->
+        </div>
+        <div class="editor-container">
+            <textarea class="editor" id="textEditor"></textarea>
+            <div class="preview" id="preview"></div>
+        </div>
+    </div>
+
+    <!-- The modal overlay will be dynamically added/removed by JavaScript -->
+
+    <script src="script.js"></script>
+</body>
+</html>

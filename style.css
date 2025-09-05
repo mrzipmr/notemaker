@@ -1,0 +1,644 @@
+/* Visually Enhanced CSS Design */
+/* Enhanced with gradients, smoother transitions, and modern typography for a more appealing look */
+/* CSS Variables for consistency and easy theming */
+:root {
+    --primary-color: #3498db; /* Vibrant blue */
+    --primary-gradient: linear-gradient(135deg, #3498db, #2980b9);
+    --secondary-color: #2980b9; /* Deeper blue */
+    --success-color: #27ae60; /* Fresh green */
+    --success-gradient: linear-gradient(135deg, #27ae60, #219d52);
+    --danger-color: #e74c3c; /* Alert red */
+    --danger-gradient: linear-gradient(135deg, #e74c3c, #c0392b);
+    --warning-color: #e67e22; /* Warm orange */
+    --info-color: #16a085; /* Teal accent */
+    --info-gradient: linear-gradient(135deg, #1abc9c, #16a085); /* Added for guide button */
+    --neutral-light: #f9f9f9; /* Soft light bg */
+    --neutral-medium: #bdc3c7; /* Subtle gray */
+    --neutral-dark: #34495e; /* Deep text color */
+    --shadow-small: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
+    --shadow-large: 0 8px 20px rgba(0,0,0,0.2);
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 12px;
+    --border-radius-pill: 50px;
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: var(--font-main); 
+    background: linear-gradient(to bottom, #ecf0f1, #d5dbde); /* Subtle gradient bg for depth */
+    min-height: 100vh; 
+    padding: 20px; 
+    color: var(--neutral-dark); 
+}
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    background: white; 
+    border-radius: var(--border-radius-large); 
+    box-shadow: var(--shadow-large); /* Deeper shadow for elevation */
+    overflow: hidden; 
+}
+.header { 
+    background: var(--primary-gradient); /* Gradient for modern feel */
+    color: white; 
+    padding: 30px; /* Slightly more padding for prominence */
+    text-align: center; 
+    border-bottom: 2px solid var(--secondary-color); 
+}
+.header h1 { 
+    margin-bottom: 5px; 
+    font-size: 2.6em; /* Larger for impact */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Softer shadow */
+}
+.header p { 
+    font-size: 1.2em; 
+    color: #d0e9ff; 
+    opacity: 0.9; /* Slight transparency for subtlety */
+}
+
+.toolbar {
+    background: var(--neutral-light);
+    padding: 12px 15px; /* Slightly more padding for comfort */
+    border-bottom: 1px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.editor-container { 
+    display: flex; 
+    height: 600px; 
+    border-radius: var(--border-radius-large); 
+    overflow: hidden; 
+    box-shadow: var(--shadow-small) inset; /* Inner shadow for depth */
+}
+.editor { 
+    flex: 1; 
+    padding: 25px; 
+    font-size: 16px; 
+    line-height: 1.7; 
+    border: none; 
+    outline: none; 
+    resize: none; 
+    font-family: var(--font-mono); 
+    background: #fff; 
+    color: #444; 
+    border-right: 1px solid #d0d0d0; 
+    transition: background var(--transition-medium); /* Smooth focus effect */
+}
+.editor:focus {
+    background: #f8fbff; /* Light blue tint on focus */
+}
+.preview { 
+    flex: 1; 
+    padding: 25px; 
+    background: var(--neutral-light); 
+    border-left: 1px solid #d0d0d0; 
+    overflow-y: auto; 
+    transition: background var(--transition-medium);
+}
+
+/* Tool Buttons with gradients and enhanced hover */
+.tool-btn {
+    border: none;
+    padding: 10px 18px; /* Slightly larger for better touch targets */
+    border-radius: var(--border-radius-pill); /* Pill shape for modern UI */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: var(--transition-medium);
+    color: white;
+    box-shadow: var(--shadow-small);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color); /* Default bg */
+}
+.tool-btn:hover { 
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: var(--shadow-medium); 
+    filter: brightness(1.05); /* Slight brighten */
+}
+
+.rule-btn { background: linear-gradient(135deg, #c0392b, #a32e20); }
+.vocab-btn { background: linear-gradient(135deg, #8e44ad, #703688); }
+.save-btn { background: var(--success-gradient); }
+.dialogue-btn { background: var(--primary-gradient); }
+.example-btn { background: linear-gradient(135deg, #16a085, #138a6f); }
+.center-btn { background: linear-gradient(135deg, #d35400, #b74700); }
+.line-btn { background: linear-gradient(135deg, #777, #5f5f5f); }
+/* File operations buttons with gradients */
+.file-save-btn { background: linear-gradient(135deg, #2c3e50, #23313f); }
+.file-load-btn { background: linear-gradient(135deg, var(--neutral-dark), #2a3b4e); }
+.preview-new-tab-btn { background: linear-gradient(135deg, #6c7a7d, #596567); }
+.header-block-btn { background: var(--primary-gradient); }
+.header-block-btn:hover { filter: brightness(1.1); }
+.guide-btn { background: var(--info-gradient); } /* New style for Guide button */
+
+
+.format-btn {
+    background: var(--neutral-dark);
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Larger for usability */
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+    transition: var(--transition-medium);
+}
+.format-btn:hover { 
+    background: #2c3e50; 
+    transform: scale(1.05); /* Subtle scale effect */
+}
+
+.block-controls { 
+    position: absolute; 
+    top: 15px; 
+    right: 10px; 
+    z-index: 10; 
+    display: flex; 
+    gap: 5px; 
+    align-items: center;
+    opacity: 0.7; /* Semi-transparent until hover */
+    transition: opacity var(--transition-fast);
+}
+.block-controls:hover { opacity: 1; }
+.block-number { 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 0.8em; 
+    color: #7f8c8d; 
+    padding: 5px 8px; 
+    background: #e0e0e0; 
+    border-radius: var(--border-radius-small); 
+    transition: background var(--transition-fast);
+}
+.block-number:hover { background: #d0d0d0; }
+
+/* General Block Styles with gradients and rounded corners */
+.rule-block, .dialogue-block, .example-block, .centered-block, .markup-header-block {
+    position: relative;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-small);
+    transition: var(--transition-medium);
+    overflow: hidden; /* For gradient overlays if needed */
+}
+.rule-block:hover, .dialogue-block:hover, .example-block:hover, .centered-block:hover, .markup-header-block:hover { 
+    box-shadow: var(--shadow-medium); 
+    transform: translateY(-3px); /* Lift on hover for interactivity */
+}
+
+/* Block Type Specific Styles - added subtle gradients */
+.rule-block { 
+    background: linear-gradient(to bottom, #fdf5f3, #fbeee9); 
+    border-left: 5px solid #c0392b; 
+}
+.dialogue-block { 
+    background: linear-gradient(to bottom, #e8f4ff, #d9eaff); 
+    border-left: 5px solid var(--secondary-color); 
+}
+.example-block { 
+    background: linear-gradient(to bottom, #edfcf6, #dff7ed); 
+    border-left: 5px solid var(--info-color); 
+}
+.centered-block { 
+    text-align: center; 
+    background: linear-gradient(to bottom, #f5f5f5, #ebebeb); 
+    padding: 15px; 
+    border-left: 5px solid #d35400; 
+}
+.markup-header-block {
+    background: linear-gradient(to bottom, #e0f2f7, #d1e9f0);
+    border-left: 5px solid var(--primary-color);
+    padding: 15px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--neutral-dark);
+}
+
+/* Internal Block Elements - improved typography */
+.internal-block-header { 
+    font-weight: bold; 
+    font-size: 1.2em; 
+    margin: 15px 0 10px 0; 
+    padding: 5px 0; 
+    color: var(--neutral-dark); 
+    border-bottom: 1px dashed #ccc; 
+    letter-spacing: 0.5px; /* For better readability */
+}
+.internal-block-separator { 
+    height: 2px; 
+    background: var(--neutral-medium); 
+    margin: 20px 0; 
+    border-radius: 1px; 
+    opacity: 0.7; 
+    transition: opacity var(--transition-slow);
+}
+.internal-example-group { 
+    margin-top: 10px; 
+    margin-bottom: 15px; 
+    padding: 12px 15px; 
+    background: #f2f2f2; 
+    border-left: 3px solid var(--warning-color); 
+    border-radius: var(--border-radius-small); 
+    font-size: 0.95em; 
+    box-shadow: var(--shadow-small) inset; /* Inner shadow for depth */
+}
+.internal-example-group div { 
+    font-style: italic; 
+    color: #555; 
+    line-height: 1.6; /* Better line spacing */
+    margin: 3px 0; 
+}
+.dialogue-line { 
+    max-width: 75%; 
+    padding: 12px 18px; 
+    border-radius: 25px; 
+    line-height: 1.5; 
+    box-shadow: var(--shadow-small); 
+    border: 1px solid rgba(0,0,0,0.1); /* Softer border */
+    margin: 5px 0; 
+    transition: background var(--transition-fast);
+}
+.dialogue-line:hover { background: rgba(255,255,255,0.5); } /* Highlight on hover */
+.dialogue-line.left { margin-right: auto; border-bottom-left-radius: 5px; }
+.dialogue-line.right { margin-left: auto; border-bottom-right-radius: 5px; }
+.dialogue-speaker { 
+    font-weight: bold; 
+    display: block; 
+    margin-bottom: 3px; 
+    font-size: 0.9em; 
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4); 
+    color: var(--primary-color); /* Accent color for speakers */
+}
+
+/* Responsive Content Group - added borders and shadows */
+.responsive-content-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 1px solid var(--neutral-medium);
+    border-bottom: 1px solid var(--neutral-medium);
+}
+
+.responsive-content-item {
+    flex: 1 1 150px;
+    padding: 12px 18px; /* More padding for comfort */
+    border: 1px solid #dcdcdc;
+    border-radius: var(--border-radius-medium);
+    background-color: #fcfcfc;
+    box-shadow: var(--shadow-small);
+    line-height: 1.6;
+    color: #555;
+    transition: box-shadow var(--transition-fast);
+}
+.responsive-content-item:hover { box-shadow: var(--shadow-medium); }
+
+.responsive-pipe {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-weight: bold;
+    color: var(--neutral-medium);
+    flex-shrink: 0;
+}
+
+/* Vocabulary Styles - enhanced with gradients and better contrast */
+.vocabulary-master-block { 
+    background: linear-gradient(to bottom, var(--neutral-dark), #2c3e50); 
+    border: 3px solid #2c3e50; 
+    border-radius: var(--border-radius-medium); 
+    padding: 25px; 
+    margin-top: 25px; 
+    color: white; 
+    box-shadow: var(--shadow-large); /* Stronger shadow for prominence */
+}
+.vocabulary-master-block h2 { 
+    text-align: center; 
+    color: white; 
+    margin: -25px -25px 20px -25px; 
+    background: linear-gradient(135deg, #2c3e50, #23313f); 
+    padding: 15px; 
+    border-radius: 8px 8px 0 0; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+    font-size: 1.6em; /* Larger header */
+}
+.vocab-item { 
+    background: rgba(255, 255, 255, 0.08); /* Slightly more opaque for readability */
+    border-radius: var(--border-radius-medium); 
+    padding: 15px; 
+    margin-bottom: 10px; 
+    position: relative; 
+    border: 1px solid rgba(255,255,255,0.15); 
+    transition: var(--transition-medium); 
+}
+.vocab-item:hover { 
+    transform: translateY(-2px); 
+    background: rgba(255, 255, 255, 0.12); 
+}
+.vocab-item-word { 
+    font-weight: bold; 
+    font-size: 1.2em; 
+    color: #a29bfe; 
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
+    display: flex; 
+    align-items: baseline; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-bottom: 5px; 
+}
+.vocab-item-word .main-word { margin-right: 10px; }
+.vocab-item-transcription { 
+    font-size: 0.9em; 
+    color: #d1d8e0; 
+    opacity: 0.8; /* Adjusted opacity */
+}
+.vocab-link { 
+    color: #d1d8e0; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: var(--transition-fast); 
+}
+.vocab-link:hover { 
+    color: #fff; 
+    text-decoration: underline; /* Subtle underline on hover */
+}
+
+/* Dictionary buttons - pill shape with gradients */
+.dict-buttons { display: flex; gap: 5px; flex-wrap: wrap; margin-left: auto; }
+.dict-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Adjusted padding */
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: var(--transition-medium);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-small);
+}
+.dict-btn:hover { 
+    transform: scale(1.05); 
+    box-shadow: var(--shadow-medium); 
+}
+.dict-btn.collins { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.dict-btn.cambridge { background: var(--primary-gradient); }
+.dict-btn.oxford { background: linear-gradient(135deg, var(--warning-color), #d35400); }
+.dict-btn.google { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+
+/* Separator Block Styles - added animation */
+.separator-wrapper { 
+    position: relative; 
+    padding: 10px 0; 
+    cursor: pointer; 
+}
+.compact-separator { 
+    height: 3px; 
+    background: var(--neutral-medium); 
+    opacity: 0.6; 
+    border: none; 
+    width: 80%; 
+    margin: 0 auto; 
+    transition: var(--transition-medium); 
+}
+.separator-wrapper:hover .compact-separator { 
+    opacity: 1; 
+    width: 100%; /* Expand on hover */
+}
+
+/* Control Buttons - with gradients and scale effects */
+.delete-btn, .edit-btn { 
+    border: none; 
+    width: 32px; /* Slightly larger */
+    height: 32px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: var(--transition-medium); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 2; 
+    box-shadow: var(--shadow-small); 
+    color: white; 
+}
+.delete-btn { background: var(--danger-gradient); }
+.edit-btn { background: var(--primary-gradient); font-size: 14px; }
+.delete-btn:hover { transform: scale(1.15); filter: brightness(1.1); }
+.edit-btn:hover { transform: scale(1.15); filter: brightness(1.1); }
+
+.vocab-item .block-controls {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+.vocab-item:hover .block-controls { opacity: 1; }
+
+.clear-btn { 
+    background: linear-gradient(135deg, #7f8c8d, #6c7a7d); 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: var(--border-radius-small); 
+    cursor: pointer; 
+    margin-left: auto; 
+    transition: var(--transition-medium); 
+}
+.clear-btn:hover { 
+    transform: translateY(-1px); 
+    box-shadow: var(--shadow-medium); 
+}
+.separator { margin: 0 8px; color: #ccc; }
+.html-title-block { 
+    padding: 35px; /* More padding for grandeur */
+    background: var(--primary-gradient); 
+    color: white; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    border-radius: var(--border-radius-medium); 
+    box-shadow: var(--shadow-large); 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+}
+.html-title-block h1 { 
+    font-size: 3em; /* Larger for visual impact */
+    margin:0; 
+}
+
+/* Modal - added fade-in animation and better button styles */
+.modal-overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.6); 
+    z-index: 20000; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    opacity: 0; 
+    transition: opacity var(--transition-slow); 
+}
+.modal-overlay.show { opacity: 1; } /* Class for animation, assume JS handles */
+.modal-dialog { 
+    background: white; 
+    padding: 25px; 
+    border-radius: var(--border-radius-medium); 
+    box-shadow: var(--shadow-large); 
+    width: 90%; 
+    max-width: 800px; /* Increased for better guide readability */
+    transform: scale(0.95); 
+    transition: transform var(--transition-medium); 
+    max-height: 90vh; /* Ensure modal fits on screen */
+    overflow-y: auto; /* Allow scrolling for long content */
+}
+.modal-dialog.show { transform: scale(1); }
+.modal-dialog h2 { 
+    margin-top: 0; 
+    margin-bottom: 15px; 
+    color: var(--neutral-dark); 
+    font-size: 1.4em; 
+}
+.modal-dialog label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    color: var(--neutral-dark); 
+}
+.modal-dialog textarea { 
+    width: 100%; 
+    height: 200px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: var(--border-radius-small); 
+    font-family: var(--font-mono); 
+    font-size: 14px; 
+    margin-bottom: 15px; 
+    resize: vertical; 
+    box-shadow: var(--shadow-small) inset; 
+}
+.modal-dialog .modal-content-display { /* New style for displaying HTML content */
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--neutral-light);
+    border-radius: var(--border-radius-small);
+    border: 1px solid #eee;
+    max-height: 70vh;
+    overflow-y: auto;
+    line-height: 1.6;
+    color: var(--neutral-dark);
+}
+.modal-dialog .modal-content-display h3 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.modal-dialog .modal-content-display h4 {
+    color: var(--secondary-color);
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+.modal-dialog .modal-content-display ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.modal-dialog .modal-content-display li {
+    margin-bottom: 5px;
+}
+.modal-dialog .modal-content-display code {
+    background-color: #e0e0e0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+.modal-buttons { text-align: right; }
+.modal-buttons button { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: var(--border-radius-small); 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-left: 10px; 
+    transition: var(--transition-medium); 
+    color: white; 
+}
+.modal-save-btn { background: var(--success-gradient); }
+.modal-cancel-btn { background: var(--danger-gradient); }
+.modal-close-btn { background: var(--neutral-dark); } /* New style for a generic close button */
+.modal-buttons button:hover { transform: translateY(-1px); box-shadow: var(--shadow-medium); }
+
+@keyframes highlight-fade { 
+    0% { background-color: rgba(52, 152, 219, 0.3); } 
+    100% { background-color: transparent; } 
+}
+.highlight { animation: highlight-fade 1.5s ease-out; }
+
+/* Responsive Adjustments - enhanced for mobile with touch-friendly sizes */
+@media (max-width: 768px) {
+    body { padding: 10px; background: #ecf0f1; /* Reset gradient for simplicity */ }
+    .container { border-radius: 0; box-shadow: none; }
+    .header { padding: 20px; border-radius: 0; }
+    .header h1 { font-size: 2em; }
+    .header p { font-size: 1em; }
+    .toolbar { padding: 10px; gap: 8px; justify-content: center; }
+    .tool-btn, .format-btn { padding: 8px 14px; font-size: 13px; }
+    .editor-container { flex-direction: column; height: auto; border-radius: 0; }
+    .editor, .preview { width: 100%; padding: 20px; font-size: 15px; min-height: 300px; }
+    .editor { border-bottom: 1px solid #d0d0d0; }
+    .preview { border-top: 1px solid #d0d0d0; }
+    .modal-dialog { width: 95%; padding: 20px; max-width: none; } /* Removed max-width on mobile */
+    .modal-dialog h2 { font-size: 1.3em; }
+    .modal-dialog textarea { height: 180px; font-size: 13px; }
+    .modal-buttons button { padding: 9px 18px; font-size: 15px; }
+    .responsive-content-group { flex-direction: column; gap: 8px; padding: 8px 0; border: none; }
+    .responsive-content-item { width: 100%; padding: 10px 15px; }
+    .responsive-pipe { display: none; }
+    .html-title-block { padding: 25px; font-size: 0.9em; border-radius: 0; }
+    .html-title-block h1 { font-size: 2.2em; }
+    .vocabulary-master-block { padding: 20px; margin-top: 20px; border-radius: 0; }
+    .vocabulary-master-block h2 { margin: -20px -20px 15px -20px; padding: 12px; font-size: 1.4em; }
+    .vocab-item { padding: 12px; }
+    .vocab-item-word { font-size: 1.1em; flex-direction: column; align-items: flex-start; }
+    .vocab-item-word .main-word { margin-bottom: 8px; }
+    .dict-buttons { margin-left: 0; width: 100%; justify-content: flex-start; gap: 4px; }
+    .dict-btn { font-size: 0.8em; padding: 5px 10px; }
+    .block-controls { top: 10px; right: 10px; }
+}
+
+@media (max-width: 480px) {
+    .header h1 { font-size: 1.8em; }
+    .editor, .preview { min-height: 220px; padding: 15px; font-size: 14px; }
+    .tool-btn, .format-btn { padding: 7px 12px; font-size: 12px; }
+    .toolbar { padding: 8px; gap: 5px; }
+    .clear-btn, .save-btn { padding: 7px 12px; font-size: 12px; }
+    .html-title-block h1 { font-size: 1.8em; }
+}
